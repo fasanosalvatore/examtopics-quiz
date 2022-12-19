@@ -15,17 +15,12 @@ async function getQuiz(quizId) {
   const quizData = (await getDoc(quizDataQuery)).data();
   const questionsQuery = query(
     collection(db, "questions"),
-    where("exam_id", "==", quizId),
-    limit(4)
+    where("exam_id", "==", quizId)
   );
   quizData.questions = (await getDocs(questionsQuery)).docs.map((doc) => ({
     ...doc.data(),
     givenAnswers: [],
   }));
-  // quizData.questions = quizData.questions.map(question => ({
-  //   ...question,
-  //   givenAnswers: [],
-  // }));
   return quizData;
 }
 

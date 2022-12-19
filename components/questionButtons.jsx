@@ -24,7 +24,7 @@ export default function QuestionButtons({
           )}
           onClick={() => setCurrent(number)}
         >
-          {number}
+          {number+1}
         </button>
       ))}
     </div>
