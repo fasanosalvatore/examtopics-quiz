@@ -10,6 +10,7 @@ export default function Question({
   return (
     <div>
       <div dangerouslySetInnerHTML={{ __html: question.question }}></div>
+      {question.question_img ? <img src={question.question_img} /> : ""}
       <fieldset className="space-y-2">
         {question.answers.map((answer) => (
           <div
