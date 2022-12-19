@@ -8,7 +8,9 @@ export default function RootLayout({ children }) {
         head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body className="grid h-screen place-items-center bg-gray-200">
+        {children}
+      </body>
     </html>
   )
 }
